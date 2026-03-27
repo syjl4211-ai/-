@@ -715,7 +715,7 @@ def sidebar():
         st.caption("版本：V8 修正版")
 
 def render_dashboard():
-    page_header("營運儀表板", "提供目前產線、交期、產能與排程健康度的管理視圖。", ["總覽", "KPI"])
+    page_header("營運儀表板", "******。", ["總覽", "KPI"])
     if not has_result():
         st.info("請先到「Forecast輸入」完成排程。")
         return
@@ -868,7 +868,7 @@ def render_station_board():
     panel_close()
 
 def render_station_cards():
-    page_header("工位圖", "以卡片方式呈現指定日期各工位正在裝配的機台，並與排程清單同日同資料連動。", ["工位", "卡片"])
+    page_header("工位圖", "******", ["工位", "卡片"])
     if not has_result():
         st.info("請先到「Forecast輸入」執行排程。")
         return
@@ -888,7 +888,7 @@ def render_station_cards():
         (schedule_df["planned_finish"].dt.date >= selected_date)
     ].copy()
 
-    panel_open("工位卡片", "這裡顯示的工位、機台、工序，會與同一天的排程清單一致。")
+    panel_open("工位圖", "*********")
     if active_rows.empty:
         st.markdown('<div class="empty-card">該日期目前沒有工位在製資料。</div>', unsafe_allow_html=True)
         panel_close()
